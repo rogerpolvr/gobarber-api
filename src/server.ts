@@ -11,7 +11,7 @@ app.post('/users', (request, response) => {
 
   const user = {
     name,
-    email
+    email,
   };
 
   return response.json(user);

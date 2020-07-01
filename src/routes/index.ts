@@ -6,4 +6,3 @@ const routes = Router();
 routes.use('/appointments', appointmentsRouter);
 
 export default routes;
-
