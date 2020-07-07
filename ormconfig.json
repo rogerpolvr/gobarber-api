@@ -4,7 +4,7 @@
   "port": 5432,
   "username": "postgres",
   "password": "12345a!",
-  "datebase": "gobarber-dev",
+  "database": "dev",
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
