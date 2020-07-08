@@ -5,6 +5,7 @@
   "username": "postgres",
   "password": "12345a!",
   "database": "dev",
+  "entities": ["./src/models/*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
