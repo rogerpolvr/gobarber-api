@@ -20,5 +20,5 @@ app.post('/users', (request, response) => {
 });
 
 app.listen(3333, () => {
-  console.log('Server started on port 3333!');
+  console.log('\x1b[5m\x1b[33m%s\x1b[0m\x1b[1m', '🚀 Server started on localhost port 3333! 🚀', '\x1b[0m');
 });
