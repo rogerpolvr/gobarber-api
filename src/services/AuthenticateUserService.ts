@@ -1,7 +1,7 @@
 import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
-
+import authConfig from '../config/auth';
 import User from '../models/User';
 
 interface Request {
@@ -38,9 +38,12 @@ class AuthenticateUserService {
     // Payload - Informações do user: Id, username, permissões...
     // Hash - Gerada no site MD5 de forma randomica
     // Opções de SignOn - Usuário, tempo de expiração
-    const token = sign({}, '229d282e0d12bb43de18d0eafa25a667', {
+
+    const { secret, expiresIn } = authConfig.jwt;
+
+    const token = sign({}, secret, {
       subject: user.id,
-      expiresIn: '10h',
+      expiresIn: expiresIn,
     });
 
     return {
