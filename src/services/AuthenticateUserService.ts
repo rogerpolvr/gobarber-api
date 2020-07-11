@@ -1,8 +1,8 @@
 import { getRepository } from 'typeorm';
-// import { hash } from 'bcryptjs';
-import User from '../models/User';
-import usersRouter from '../routes/users.routes';
 import { compare } from 'bcryptjs';
+import { sign } from 'jsonwebtoken';
+
+import User from '../models/User';
 
 interface Request {
   email: string;
@@ -11,6 +11,7 @@ interface Request {
 
 interface Response {
   user: User;
+  token: string;
 }
 
 class AuthenticateUserService {
@@ -34,8 +35,17 @@ class AuthenticateUserService {
       throw new Error(errorMessage);
     }
 
+    // Payload - Informações do user: Id, username, permissões...
+    // Hash - Gerada no site MD5 de forma randomica
+    // Opções de SignOn - Usuário, tempo de expiração
+    const token = sign({}, '229d282e0d12bb43de18d0eafa25a667', {
+      subject: user.id,
+      expiresIn: '10h',
+    });
+
     return {
       user,
+      token,
     };
   }
 }
