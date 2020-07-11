@@ -6,10 +6,6 @@
   GoBarber - Aplicação desenvolvida durante o curso de NodeJS
 </h3>
 
-<h3 align="center">
-  #typescript, #nodejs, #express, #typeORM, #postgres
-</h3>
-
 <p align="center">
   <a href="#rocket-sobre-a-aplicação">Sobre a Aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
